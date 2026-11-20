@@ -1,1 +1,163 @@
 // app global css in SCSS form
+
+:root {
+  --bo-ink: #151821;
+  --bo-ink-2: #3a404c;
+  --bo-muted: #5b6270;
+  --bo-border: #e2e5ea;
+  --bo-border-strong: #d5d9e0;
+  --bo-line: #eef0f4;
+  --bo-page: #f5f6f8;
+  --bo-head: #fafbfc;
+  --bo-primary-soft: #e6eaf6;
+  --bo-gold-soft: #fff4d6;
+  --bo-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+body {
+  background: var(--bo-page);
+  color: var(--bo-ink);
+}
+
+a {
+  color: $primary;
+}
+a:hover {
+  color: #152c78;
+}
+
+// Soft tint colors usable as Quasar `color` / `toggle-color` values
+.bg-primary-soft {
+  background: var(--bo-primary-soft) !important;
+}
+.text-primary-soft {
+  color: var(--bo-primary-soft) !important;
+}
+.text-muted {
+  color: var(--bo-muted) !important;
+}
+.text-ink-2 {
+  color: var(--bo-ink-2) !important;
+}
+
+.bo-mono {
+  font-family: var(--bo-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+// Page shell
+.bo-page {
+  padding: 28px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media (max-width: $breakpoint-xs-max) {
+    padding: 20px 16px 32px;
+  }
+}
+
+// White bordered card
+.bo-card {
+  background: #fff;
+  border: 1px solid var(--bo-border);
+  border-radius: 12px;
+}
+
+.bo-h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+// Segmented toggle (q-btn-toggle)
+.bo-segment {
+  background: #fff;
+  border: 1px solid var(--bo-border-strong);
+  border-radius: 10px;
+  padding: 3px;
+
+  .q-btn {
+    min-height: 38px;
+    border-radius: 7px !important;
+    font-size: 13px;
+    color: var(--bo-ink-2);
+  }
+}
+
+// Default Quasar button tweaks for this app
+.bo-btn {
+  min-height: 44px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.bo-btn--outline {
+  border: 1px solid var(--bo-border-strong);
+  background: #fff;
+  color: var(--bo-ink);
+}
+
+// Tables (q-markup-table / q-table)
+.bo-table {
+  &.q-table__card,
+  .q-table__card {
+    box-shadow: none;
+    background: transparent;
+  }
+
+  thead tr th {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--bo-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--bo-border);
+  }
+
+  tbody td {
+    font-size: 14px;
+    height: auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--bo-line);
+    border-top: 0;
+  }
+
+  &--head-tinted thead tr th {
+    background: var(--bo-head);
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: 20px;
+  }
+  th:last-child,
+  td:last-child {
+    padding-right: 20px;
+  }
+}
+
+// Status pill
+.bo-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  line-height: 1.4;
+}
+
+// Wrapping row of cards
+.bo-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  > * {
+    min-width: 0;
+  }
+}
