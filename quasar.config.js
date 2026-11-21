@@ -46,7 +46,8 @@ export default defineConfig((ctx) => {
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-      // publicPath: '/',
+      // GitHub Pages serves the app from /lottery-back-office/
+      publicPath: ctx.prod ? '/lottery-back-office/' : '/',
       // analyze: true,
       // env: {},
       // rawDefine: {}
